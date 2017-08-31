@@ -334,6 +334,7 @@ export type NavigationTabScreenOptions = {
     | ((options: { tintColor: ?string, focused: boolean }) => ?React.Element<
         *
       >),
+  drawerLockMode?: 'unlocked' | 'locked-close' | 'locked-open', // defaults `unlocked`
   tabBarVisible?: boolean,
 };
 
