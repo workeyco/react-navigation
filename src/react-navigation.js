@@ -65,6 +65,9 @@ module.exports = {
   get HeaderBackButton() {
     return require('./views/Header/HeaderBackButton').default;
   },
+  get HeaderRightButton() {
+    return require('./views/Header/HeaderRightButton').default;
+  },
 
   // DrawerView
   get DrawerView() {

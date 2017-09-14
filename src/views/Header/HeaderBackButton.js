@@ -22,6 +22,7 @@ type Props = {
   tintColor?: ?string,
   truncatedTitle?: ?string,
   width?: ?number,
+  hideBackIcon?: ?boolean
 };
 
 type DefaultProps = {
@@ -63,6 +64,7 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
       titleStyle,
       tintColor,
       truncatedTitle,
+      hideBackIcon
     } = this.props;
 
     const renderTruncated =
@@ -88,14 +90,14 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
         borderless
       >
         <View style={styles.container}>
-          <Image
+          {!hideBackIcon && <Image
             style={[
               styles.icon,
               !!title && styles.iconWithTitle,
               !!tintColor && { tintColor },
             ]}
             source={asset}
-          />
+          />}
           {Platform.OS === 'ios' &&
             title &&
             <Text
